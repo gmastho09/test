@@ -1,0 +1,31 @@
+{
+  "name": "retro-spotify-controller",
+  "version": "1.0.0",
+  "description": "Contrôleur Spotify desktop (Electron) style mid-century retro",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.retro.spotifycontroller",
+    "productName": "Spotify Controller",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer.js",
+      "index.html",
+      "style.css",
+      "spotify.js",
+      "README.md"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "devDependencies": {
+    "electron": "^31.1.0",
+    "electron-builder": "^24.13.3"
+  }
+}

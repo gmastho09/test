@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@400;600;700;800&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <div class="pixel-corners" aria-hidden="true"></div>
+      <h1>Spotify</h1>
+      <p class="subtitle">Controller API • Pixel retro edition</p>
+
+      <section class="player-card">
+        <div class="pixel-frame">
+          <img id="albumArt" alt="Pochette" src="" />
+        </div>
+        <div class="track-meta">
+          <h2 id="trackName">Connecte Spotify</h2>
+          <p id="artistName">—</p>
+        </div>
+      </section>
+
+      <section class="controls">
+        <button id="prevBtn" class="pixel-btn" aria-label="Précédent">⏮</button>
+        <button id="playPauseBtn" class="pixel-btn main-btn" aria-label="Pause ou lecture">⏯</button>
+        <button id="nextBtn" class="pixel-btn" aria-label="Suivant">⏭</button>
+      </section>
+
+      <section class="auth-zone pixel-panel">
+        <button id="connectBtn" class="connect-btn">Connexion Spotify</button>
+        <label for="codeInput">Code de retour OAuth</label>
+        <input id="codeInput" type="text" placeholder="Colle le code ?code=..." />
+        <button id="validateBtn">Valider le code</button>
+        <p id="statusText">Non connecté</p>
+      </section>
+    </main>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>
