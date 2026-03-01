@@ -1,0 +1,41 @@
+{
+  "name": "spotify-mini-player",
+  "version": "1.0.0",
+  "description": "Hybrid desktop Spotify mini player with Electron frontend and local backend API",
+  "main": "frontend/main.js",
+  "scripts": {
+    "start": "concurrently \"npm:backend\" \"npm:frontend\"",
+    "frontend": "wait-on tcp:127.0.0.1:8787 && electron .",
+    "backend": "node backend/server.js",
+    "lint": "echo 'No lint configured'",
+    "package": "electron-builder --win portable"
+  },
+  "build": {
+    "appId": "com.example.spotifyminiplayer",
+    "productName": "Spotify Mini Player",
+    "directories": {
+      "output": "build"
+    },
+    "files": [
+      "frontend/**/*",
+      "backend/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "portable"
+    }
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "spotify-web-api-node": "^5.0.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "electron": "^30.0.6",
+    "electron-builder": "^24.13.3",
+    "wait-on": "^7.2.0"
+  }
+}
