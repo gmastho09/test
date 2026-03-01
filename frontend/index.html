@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Mini Player</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="player">
+      <header class="drag-bar">
+        <span>Spotify Mini Player</span>
+        <span class="status" id="status">Connexion…</span>
+      </header>
+      <section class="content">
+        <img id="cover" src="" alt="Pochette album" />
+        <div class="meta">
+          <h1 id="title">Aucun titre</h1>
+          <p id="artist">Artiste inconnu</p>
+          <p class="state" id="state">paused</p>
+        </div>
+      </section>
+      <footer class="controls">
+        <button id="prev" title="Précédent">⏮</button>
+        <button id="playPause" title="Lecture / Pause">⏯</button>
+        <button id="next" title="Suivant">⏭</button>
+        <button id="connect" class="ghost">Connexion Spotify</button>
+      </footer>
+    </main>
+    <script src="./renderer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+node_modules/
+.env
+backend/token.json
+backend/logs/backend.log
+build/
+dist/

@@ -1,0 +1,116 @@
+:root {
+  color-scheme: dark;
+  --bg: rgba(14, 17, 24, 0.75);
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #1db954;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+  background: transparent;
+  padding: 10px;
+}
+
+.player {
+  backdrop-filter: blur(14px);
+  background: var(--bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  color: var(--text);
+  padding: 12px;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.35);
+  animation: fadeIn 260ms ease;
+}
+
+.drag-bar {
+  -webkit-app-region: drag;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: var(--muted);
+}
+
+.content {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+#cover {
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  object-fit: cover;
+}
+
+.meta h1 {
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.meta p {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.state {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.controls {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+button {
+  -webkit-app-region: no-drag;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  padding: 8px 12px;
+  transition: transform 140ms ease, background 140ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.16);
+}
+
+#playPause {
+  background: var(--accent);
+  color: #04220f;
+}
+
+.ghost {
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: var(--muted);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
